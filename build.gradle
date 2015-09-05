@@ -1,4 +1,24 @@
+apply plugin: 'idea'
 apply plugin: 'java'
+
+repositories {
+  mavenCentral()
+}
+
+configurations {
+  provided
+}
+
+sourceSets.main.compileClasspath += [configurations.provided]
+idea.module.scopes.PROVIDED.plus += [configurations.provided]
+
+dependencies {
+  compile 'com.google.dagger:dagger:2.0.1'
+  compile 'org.slf4j:slf4j-api:1.7.12'
+  compile 'org.slf4j:slf4j-simple:1.7.12'
+  provided 'com.google.dagger:dagger-compiler:2.0.1'
+  provided 'org.projectlombok:lombok:1.16.6'
+}
 
 task wrapper(type: Wrapper) {
   description 'Creates the gradle wrapper.'
