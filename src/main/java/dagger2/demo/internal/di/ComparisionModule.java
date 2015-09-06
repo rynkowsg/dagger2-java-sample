@@ -11,12 +11,11 @@ import javax.inject.Named;
 @Module
 public class ComparisionModule {
 
-  @Provides @Named("HDD") Disk provideHardDiskDrive() {
-    return new HardDiskDrive();
+  @Provides @Named("HDD") Disk provideHardDiskDrive(HardDiskDrive hdd) {
+    return hdd;
   }
-
-  @Provides @Named("SSD") Disk provideSolidStateDrive() {
-    return new SolidStateDrive();
+  @Provides @Named("SSD") Disk provideSolidStateDrive(SolidStateDrive ssd) {
+    return ssd;
   }
 
   @Provides @Named("Cheap") Computer provideCheapComputer(@Named("HDD") Disk disk) {

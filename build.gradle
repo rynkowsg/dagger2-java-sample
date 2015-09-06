@@ -2,7 +2,7 @@ apply plugin: 'application'
 apply plugin: 'idea'
 apply plugin: 'java'
 
-mainClassName = "dagger2.demo.Comparision"
+mainClassName = "dagger2.demo.Main"
 
 repositories {
   mavenCentral()
